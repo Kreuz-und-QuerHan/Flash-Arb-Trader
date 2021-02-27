@@ -1,0 +1,27 @@
+{
+  "name": "Flash-Arb-Bot",
+  "description": "X",
+  "version": "1.0.0",
+  "license": "AGPLv3",
+  "author": "Aave",
+  "contributors": [
+    "X"
+  ],
+  "homepage": "X",
+  "repository": "X",
+  "dependencies": {
+    "truffle-hdwallet-provider": "^1.0.17"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.1",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@openzeppelin/contracts": "^3.0.0",
+    "@truffle/hdwallet-provider": "^1.0.34",
+    "chai": "^4.3.0",
+    "dotenv": "^8.2.0",
+    "ethereum-waffle": "^3.2.2",
+    "ethers": "^5.0.31",
+    "hardhat": "^2.0.11",
+    "truffle": "^5.1.14"
+  }
+}

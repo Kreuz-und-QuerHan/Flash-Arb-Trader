@@ -14,6 +14,12 @@ Before you start playing with this I highly recommend to have a read of the [Aav
 Since Sushiswap is a fork of UniswapV2, I also suggest familiarising yourself with the Uniswap V2 guide on [trading via smart contracts](https://uniswap.org/docs/v2/smart-contract-integration/trading-from-a-smart-contract/), particularly if you plan on adding more swaps to your arbitrage strategy.
 
 
+## Dependencies
+
+```bash
+npm install
+```
+
 ## Deployment
 
 The contract can be plonked directly onto Remix, using solidity compiler 0.6.12, and Metamask using Injected Web3.
