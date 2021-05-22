@@ -88,12 +88,12 @@ contract FlashArbTrader is FlashLoanReceiverBase {
     function executeArbitrage() public {
 
         // Trade 1: Execute swap of Ether into designated ERC20 token on UniswapV2
-        try uniswapV2Router.swapETHForExactTokens{ 
-            value: amountToTrade 
+        try uniswapV2Router.swapETHForExactTokens{
+            value: amountToTrade
         }(
-            amountToTrade, 
-            getPathForETHToToken(daiTokenAddress), 
-            address(this), 
+            amountToTrade,
+            getPathForETHToToken(daiTokenAddress),
+            address(this),
             deadline
         ){
         } catch {
@@ -110,21 +110,21 @@ contract FlashArbTrader is FlashLoanReceiverBase {
 
         // Trade 2: Execute swap of the ERC20 token back into ETH on Sushiswap to complete the arb
         try sushiswapV1Router.swapExactTokensForETH (
-            tokenAmountInWEI, 
-            estimatedETH, 
-            getPathForTokenToETH(daiTokenAddress), 
-            address(this), 
+            tokenAmountInWEI,
+            estimatedETH,
+            getPathForTokenToETH(daiTokenAddress),
+            address(this),
             deadline
         ){
         } catch {
-            // error handling when arb failed due to trade 2    
+            // error handling when arb failed due to trade 2
         }
     }
 
     /**
         sweep entire balance on the arb contract back to contract owner
      */
-    function WithdrawBalance() public payable { // onlyOwner {
+    function WithdrawBalance() public payable onlyOwner {
 
         // withdraw all ETH
         msg.sender.call{ value: address(this).balance }("");
@@ -138,12 +138,12 @@ contract FlashArbTrader is FlashLoanReceiverBase {
         e.g. 1 ether = 1000000000000000000 wei
      */
     function flashloan (
-        address _flashAsset, 
+        address _flashAsset,
         uint _flashAmount,
         address _daiTokenAddress,
         uint _amountToTrade,
         uint256 _tokensOut
-        ) public { // onlyOwner {
+        ) public onlyOwner {
 
         bytes memory data = "";
 

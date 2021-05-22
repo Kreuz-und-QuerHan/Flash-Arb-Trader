@@ -43,7 +43,7 @@
       ]
     },
     "/Users/pindaroso/Documents/Code/Flash-Arb-Trader/node_modules/@openzeppelin/contracts/math/SafeMath.sol": {
-      "lastModificationDate": 1614432845889,
+      "lastModificationDate": 1614433866281,
       "contentHash": "e03e12206057e809eb76c5f681170c32",
       "sourceName": "@openzeppelin/contracts/math/SafeMath.sol",
       "solcConfig": {
@@ -77,7 +77,7 @@
       ]
     },
     "/Users/pindaroso/Documents/Code/Flash-Arb-Trader/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
-      "lastModificationDate": 1614432845870,
+      "lastModificationDate": 1614434170279,
       "contentHash": "e0a41531d159d3a32f84b7a3ecf9fabb",
       "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
       "solcConfig": {
@@ -111,7 +111,7 @@
       ]
     },
     "/Users/pindaroso/Documents/Code/Flash-Arb-Trader/node_modules/@openzeppelin/contracts/token/ERC20/SafeERC20.sol": {
-      "lastModificationDate": 1614432845888,
+      "lastModificationDate": 1614434170331,
       "contentHash": "33e22842646d746e5c4124c2fdc051aa",
       "sourceName": "@openzeppelin/contracts/token/ERC20/SafeERC20.sol",
       "solcConfig": {
@@ -255,7 +255,7 @@
       ]
     },
     "/Users/pindaroso/Documents/Code/Flash-Arb-Trader/node_modules/@openzeppelin/contracts/utils/Address.sol": {
-      "lastModificationDate": 1614432845809,
+      "lastModificationDate": 1614433866103,
       "contentHash": "7aa46886ff5abe7515496208a5e2ce5a",
       "sourceName": "@openzeppelin/contracts/utils/Address.sol",
       "solcConfig": {
@@ -289,7 +289,7 @@
       ]
     },
     "/Users/pindaroso/Documents/Code/Flash-Arb-Trader/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol": {
-      "lastModificationDate": 1614432845837,
+      "lastModificationDate": 1614434170295,
       "contentHash": "8065b340476f61365c076897199425f1",
       "sourceName": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
       "solcConfig": {
@@ -327,7 +327,7 @@
       ]
     },
     "/Users/pindaroso/Documents/Code/Flash-Arb-Trader/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
-      "lastModificationDate": 1614432845881,
+      "lastModificationDate": 1614433865387,
       "contentHash": "6748815a5b45c4aeeda56819f41190e0",
       "sourceName": "@openzeppelin/contracts/access/Ownable.sol",
       "solcConfig": {
@@ -363,7 +363,7 @@
       ]
     },
     "/Users/pindaroso/Documents/Code/Flash-Arb-Trader/node_modules/@openzeppelin/contracts/utils/Context.sol": {
-      "lastModificationDate": 1614432845816,
+      "lastModificationDate": 1614433866130,
       "contentHash": "2adbd82f6d055a4751566d4671512b03",
       "sourceName": "@openzeppelin/contracts/utils/Context.sol",
       "solcConfig": {
@@ -397,8 +397,8 @@
       ]
     },
     "/Users/pindaroso/Documents/Code/Flash-Arb-Trader/contracts/FlashArbitrageTrader.sol": {
-      "lastModificationDate": 1614433554981,
-      "contentHash": "db74343fed9824e800f8fadb4cc82b42",
+      "lastModificationDate": 1614436992874,
+      "contentHash": "3bd3841b95a1fb3cca99a96f4bdd4449",
       "sourceName": "contracts/FlashArbitrageTrader.sol",
       "solcConfig": {
         "version": "0.6.12",

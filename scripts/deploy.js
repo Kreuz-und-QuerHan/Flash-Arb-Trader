@@ -1,23 +1,40 @@
 async function main() {
 
-  const [deployer] = await ethers.getSigners();
+  const deploy = false;
+  const provider = waffle.provider;
+  const contractAddress = "0x3651b2990f2F3562F4A8BB6CA4aE805f761926f5";
 
-  console.log(
-    "Deploying contracts with the account:",
-    deployer.address
-  );
+  const [deployer] = await ethers.getSigners();
 
   console.log("Account balance:", (await deployer.getBalance()).toString());
 
-  // Deployes the SugarDaddy contract passing in the Aave V2 Lending Pool and Protocol Data Provider addresses on Kovan
-  const SugarDaddy = await ethers.getContractFactory("SugarDaddy");
-  const deployDaddy = await SugarDaddy.deploy('0x9FE532197ad76c5a68961439604C037EB79681F0', '0x744C1aaA95232EeF8A9994C4E0b3a89659D9AB79');
-  console.log("SugarDaddy address:", deployDaddy.address);
+  if (deploy) {
+    console.log(
+      "Deploying contracts with the account:",
+      deployer.address
+    );
 
-  // Deployes the SugarBaby contract passing in the Aave V2 ILendingPoolAddressesProvider, Lending Pool and Protocol Data Provider addresses on Kovan
-  const SugarBaby = await ethers.getContractFactory("SugarBaby");
-  const deployBaby = await SugarBaby.deploy('0x652B2937Efd0B5beA1c8d54293FC1289672AFC6b', '0x9FE532197ad76c5a68961439604C037EB79681F0', '0x744C1aaA95232EeF8A9994C4E0b3a89659D9AB79');
-  console.log("SugarBaby address:", deployBaby.address);
+    const FlashArbTrader = await ethers.getContractFactory("FlashArbTrader");
+    var flashArbTrader = await FlashArbTrader.deploy("0x1c8756FD2B28e9426CDBDcC7E3c4d64fa9A54728",
+                                                     "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D",
+                                                     "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D" );
+
+    console.log("FlashArbTrader address:", flashArbTrader.address);
+  } else {
+    const contractAbi = [
+      "function flashloan (address _flashAsset, uint _flashAmount, address _daiTokenAddress, uint _amountToTrade, uint256 _tokensOut) public",
+    ];
+    const unsignedFlashArbTrader = new ethers.Contract(contractAddress, contractAbi, provider);
+    var flashArbTrader = await unsignedFlashArbTrader.connect(deployer);
+
+    const tx = await flashArbTrader.flashloan("0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",  // ETH
+                                              "1000000000000000000",
+                                              "0xf80a32a835f79d7787e8a8ee5721d0feafd78108",  // DAI
+                                              "1000000000000000000",
+                                              "1");
+
+    console.log("Transaction hash:", tx.hash);
+  }
 
 }
 
